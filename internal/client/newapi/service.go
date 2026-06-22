@@ -2,7 +2,6 @@ package newapi
 
 import (
 	"database/sql"
-	"encoding/json"
 	"fmt"
 	"net/http"
 	"strings"

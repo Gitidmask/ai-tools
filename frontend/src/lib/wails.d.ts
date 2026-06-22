@@ -1,5 +1,7 @@
 // Wails runtime type declarations
 
+export {};
+
 interface WailsRuntime {
   call: (method: string, ...args: unknown[]) => Promise<unknown>;
   events: {

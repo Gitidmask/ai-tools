@@ -93,7 +93,7 @@ export async function startServer(options: ServerOptions): Promise<SidecarServer
   console.log(`[devbridge] listening on ${host}:${bunServer.port}`);
 
   return {
-    port: bunServer.port,
+    port: bunServer.port ?? port,
     stop: async () => {
       bunServer.stop();
     },
