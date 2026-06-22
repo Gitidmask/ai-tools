@@ -17,8 +17,8 @@ import (
 	"ai_tools/internal/client/sidecar"
 )
 
-//go:embed frontend/dist/assets/*
-var frontendAssets embed.FS
+//go:embed frontend/dist
+var frontendDist embed.FS
 
 func main() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
@@ -95,7 +95,7 @@ func main() {
 
 func serveFrontendAssets() http.Handler {
 	// Try embedded assets first
-	subFS, err := fs.Sub(frontendAssets, "frontend/dist/assets")
+	subFS, err := fs.Sub(frontendDist, "frontend/dist/assets")
 	if err == nil {
 		return http.FileServer(http.FS(subFS))
 	}
@@ -111,7 +111,7 @@ func serveFrontendAssets() http.Handler {
 
 func serveIndexHTML(w http.ResponseWriter, r *http.Request) {
 	// Try embedded
-	data, err := frontendAssets.ReadFile("frontend/dist/assets/index.html")
+	data, err := frontendDist.ReadFile("frontend/dist/index.html")
 	if err == nil {
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
 		w.Write(data)

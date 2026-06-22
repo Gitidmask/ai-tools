@@ -12,6 +12,7 @@ build/
 frontend/node_modules/
 frontend/dist/**
 !frontend/dist/**/
+!frontend/dist/index.html
 !frontend/dist/**/placeholder.txt
 *.tsbuildinfo
 
