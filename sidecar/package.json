@@ -1,0 +1,20 @@
+{
+  "name": "claude-sidecar",
+  "version": "1.0.0",
+  "description": "AI Toolbox sidecar process - wraps Claude Code CLI for desktop integration",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "bun build --compile --target=browser --outfile=../sidecars/claude-sidecar-x86_64-pc-windows-msvc.exe ./src/index.ts",
+    "build:dev": "bun build --compile --target=browser --outfile=../sidecars/claude-sidecar-dev.exe ./src/index.ts --debug",
+    "dev": "bun run ./src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-code": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}

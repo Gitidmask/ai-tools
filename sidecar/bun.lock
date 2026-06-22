@@ -1,0 +1,41 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "claude-sidecar",
+      "dependencies": {
+        "@anthropic-ai/claude-code": "^2.0.0",
+      },
+      "devDependencies": {
+        "@types/node": "^22.0.0",
+        "typescript": "^5.7.0",
+      },
+    },
+  },
+  "packages": {
+    "@anthropic-ai/claude-code": ["@anthropic-ai/claude-code@2.1.179", "https://registry.npmmirror.com/@anthropic-ai/claude-code/-/claude-code-2.1.179.tgz", { "optionalDependencies": { "@anthropic-ai/claude-code-darwin-arm64": "2.1.179", "@anthropic-ai/claude-code-darwin-x64": "2.1.179", "@anthropic-ai/claude-code-linux-arm64": "2.1.179", "@anthropic-ai/claude-code-linux-arm64-musl": "2.1.179", "@anthropic-ai/claude-code-linux-x64": "2.1.179", "@anthropic-ai/claude-code-linux-x64-musl": "2.1.179", "@anthropic-ai/claude-code-win32-arm64": "2.1.179", "@anthropic-ai/claude-code-win32-x64": "2.1.179" }, "bin": { "claude": "bin/claude.exe" } }, "sha512-gH8HCWDPK+8m/3miGjD69VfPv/ShrFWp7nMaWbpiLzp45qrQV0wbf5Hgye2ToYvFFbzCa+S0+OZbpQ4UDetQnw=="],
+
+    "@anthropic-ai/claude-code-darwin-arm64": ["@anthropic-ai/claude-code-darwin-arm64@2.1.179", "https://registry.npmmirror.com/@anthropic-ai/claude-code-darwin-arm64/-/claude-code-darwin-arm64-2.1.179.tgz", { "os": "darwin", "cpu": "arm64" }, "sha512-OgeqVYNy1oUOigY94O1TNsi1HTOMxocZ9rphNH3oc6sCjFjRl8gV+3H1TCTdH5fXobAUAsyx36WoBoXO0MhBWA=="],
+
+    "@anthropic-ai/claude-code-darwin-x64": ["@anthropic-ai/claude-code-darwin-x64@2.1.179", "https://registry.npmmirror.com/@anthropic-ai/claude-code-darwin-x64/-/claude-code-darwin-x64-2.1.179.tgz", { "os": "darwin", "cpu": "x64" }, "sha512-okADatergdFzzTbGtWqtiRwlHJqvIqWUOQXIG8PqljADjIGTcGa2I8rZ+9HK0E1F6ZkF8uuhHVGY5EN0GKVWgw=="],
+
+    "@anthropic-ai/claude-code-linux-arm64": ["@anthropic-ai/claude-code-linux-arm64@2.1.179", "https://registry.npmmirror.com/@anthropic-ai/claude-code-linux-arm64/-/claude-code-linux-arm64-2.1.179.tgz", { "os": "linux", "cpu": "arm64" }, "sha512-KpB1gvSGW0m73be0gKbIqbKfyu0zTjf7oXuX6U1QfYKZVxarhA/D9n91c/sR6e2tB75nohx24Kg5roL6JvCYdQ=="],
+
+    "@anthropic-ai/claude-code-linux-arm64-musl": ["@anthropic-ai/claude-code-linux-arm64-musl@2.1.179", "https://registry.npmmirror.com/@anthropic-ai/claude-code-linux-arm64-musl/-/claude-code-linux-arm64-musl-2.1.179.tgz", { "os": "linux", "cpu": "arm64" }, "sha512-8PkP6JylMwgoKytQEbPtP4c1rygECwNJkZvx8HU+0YJX4SSLjcIjgY4yRgfEM9119rzE/Ia6wgXsEP+xBTkvjQ=="],
+
+    "@anthropic-ai/claude-code-linux-x64": ["@anthropic-ai/claude-code-linux-x64@2.1.179", "https://registry.npmmirror.com/@anthropic-ai/claude-code-linux-x64/-/claude-code-linux-x64-2.1.179.tgz", { "os": "linux", "cpu": "x64" }, "sha512-jyVJpNIPIpqNr24bEGGgkWDY8YSi/h1+wy9Nzfsdwk6I/OTa0/iV7C3KDJTCkALXRRxDCgJXK2rjoWzXDV7Vpw=="],
+
+    "@anthropic-ai/claude-code-linux-x64-musl": ["@anthropic-ai/claude-code-linux-x64-musl@2.1.179", "https://registry.npmmirror.com/@anthropic-ai/claude-code-linux-x64-musl/-/claude-code-linux-x64-musl-2.1.179.tgz", { "os": "linux", "cpu": "x64" }, "sha512-kx2DTE5U9b7AlZ+sJpqxxGMurSt2M7WTNgMqt+T8fO+c6WHrdsSJh+74Zq7z856IXgBrl/+Mcx1NGuaq9kH8uQ=="],
+
+    "@anthropic-ai/claude-code-win32-arm64": ["@anthropic-ai/claude-code-win32-arm64@2.1.179", "https://registry.npmmirror.com/@anthropic-ai/claude-code-win32-arm64/-/claude-code-win32-arm64-2.1.179.tgz", { "os": "win32", "cpu": "arm64" }, "sha512-0kfiYsV/xlZlmSP+YL3JexIHB30JUoyyiOIXg7VLxDi5bQYS4vyNf8TRStak0UCTYzXEneHRu6hUZ+LrZyEMiw=="],
+
+    "@anthropic-ai/claude-code-win32-x64": ["@anthropic-ai/claude-code-win32-x64@2.1.179", "https://registry.npmmirror.com/@anthropic-ai/claude-code-win32-x64/-/claude-code-win32-x64-2.1.179.tgz", { "os": "win32", "cpu": "x64" }, "sha512-8Wt9LMArUuvzq//1CGxqg07tcvIhuANxU5Mmk4DugxDmGzd1W2vQGjYazXSw+fwwn7tbhimRLWwXt76dG2/4yw=="],
+
+    "@types/node": ["@types/node@22.19.21", "https://registry.npmmirror.com/@types/node/-/node-22.19.21.tgz", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-VMeFBSCKQKmm2swI2kW51SFusDqekC6q9trBCvJ/JliDchFSuoYYKN7yVNjPthP1HKZcx3U1gI/wTcEBjEFKTA=="],
+
+    "typescript": ["typescript@5.9.3", "https://registry.npmmirror.com/typescript/-/typescript-5.9.3.tgz", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
+
+    "undici-types": ["undici-types@6.21.0", "https://registry.npmmirror.com/undici-types/-/undici-types-6.21.0.tgz", {}, "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="],
+  }
+}
