@@ -6,12 +6,13 @@
 *.dylib
 *.test
 *.out
-go.sum
 build/
 
 # Frontend
 frontend/node_modules/
-frontend/dist/
+frontend/dist/**
+!frontend/dist/**/
+!frontend/dist/**/placeholder.txt
 *.tsbuildinfo
 
 # Sidecar (build output from sidecar/ TypeScript project)

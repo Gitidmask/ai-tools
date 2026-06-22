@@ -8,8 +8,6 @@
  * - /api/terminal/ws      WebSocket 终端
  */
 
-import type { Server } from 'bun';
-
 export interface ServerOptions {
   host: string;
   port: number;

@@ -1,6 +1,6 @@
 module ai_tools
 
-go 1.21
+go 1.19
 
 require modernc.org/sqlite v1.35.0
 
