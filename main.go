@@ -97,7 +97,7 @@ func serveFrontendAssets() http.Handler {
 	// Try embedded assets first
 	subFS, err := fs.Sub(frontendDist, "frontend/dist/assets")
 	if err == nil {
-		return http.FileServer(http.FS(subFS))
+		return http.StripPrefix("/assets/", http.FileServer(http.FS(subFS)))
 	}
 
 	// Fallback to disk
