@@ -15,8 +15,7 @@ export default function WorkspacePanel() {
     // Load projects via Wails binding
     async function loadProjects() {
       try {
-        // @ts-ignore - Wails bindings
-        const list = await window.runtime?.call('project.ListProjects');
+        const list = await window.runtime?.call('project.ListProjects') as Project[] | undefined;
         if (list) setProjects(list);
       } catch (e) {
         console.error('Failed to load projects', e);

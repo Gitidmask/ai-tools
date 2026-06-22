@@ -9,34 +9,30 @@ export interface NativeSession {
 }
 
 export async function createNativeSession(): Promise<NativeSession> {
-  // @ts-ignore - Wails runtime binding
   if (window.runtime?.call) {
-    return window.runtime.call('sidecar.CreateSession');
+    return window.runtime.call('sidecar.CreateSession') as Promise<NativeSession>;
   }
   throw new Error('Wails runtime not available');
 }
 
 export async function deleteNativeSession(sessionId: string): Promise<void> {
-  // @ts-ignore
   if (window.runtime?.call) {
-    return window.runtime.call('sidecar.DeleteSession', sessionId);
+    return window.runtime.call('sidecar.DeleteSession', sessionId) as Promise<void>;
   }
 }
 
 export async function attachExistingNativeSession(
   sessionId: string
 ): Promise<NativeSession> {
-  // @ts-ignore
   if (window.runtime?.call) {
-    return window.runtime.call('sidecar.AttachSession', sessionId);
+    return window.runtime.call('sidecar.AttachSession', sessionId) as Promise<NativeSession>;
   }
   throw new Error('Wails runtime not available');
 }
 
 export async function listNativeSessions(): Promise<NativeSession[]> {
-  // @ts-ignore
   if (window.runtime?.call) {
-    return window.runtime.call('sidecar.ListSessions');
+    return window.runtime.call('sidecar.ListSessions') as Promise<NativeSession[]>;
   }
   return [];
 }
