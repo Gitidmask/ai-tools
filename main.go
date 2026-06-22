@@ -75,7 +75,7 @@ func main() {
 
 	go func() {
 		log.Printf("[startup] open http://127.0.0.1:%d in your browser", httpPort)
-		if err := server.Serve(listener); err != nil && err != http.ErrServerClosed {
+		if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			log.Fatalf("HTTP server error: %v", err)
 		}
 	}()

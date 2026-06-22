@@ -45,7 +45,7 @@ jobs:
           retention-days: 1
 
   # ============================================================
-  # Job 2: Sidecar typecheck
+  # Job 2: Sidecar typecheck + cross-compile to Windows
   # ============================================================
   sidecar:
     name: "Sidecar (Bun + TS)"
@@ -68,12 +68,27 @@ jobs:
           cd sidecar
           bun run typecheck
 
+      - name: Cross-compile sidecar → Windows exe
+        run: |
+          mkdir -p sidecars
+          cd sidecar
+          bun build --compile --target=bun-windows-x64 \
+            --outfile=../sidecars/claude-sidecar-x86_64-pc-windows-msvc.exe \
+            ./src/index.ts
+
+      - name: Upload sidecar binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: sidecar-exe
+          path: sidecars/claude-sidecar-x86_64-pc-windows-msvc.exe
+          retention-days: 1
+
   # ============================================================
-  # Job 3: Go backend — depends on frontend to embed real assets
+  # Job 3: Go backend — needs frontend + sidecar for real assets
   # ============================================================
   backend:
     name: "Go Backend"
-    needs: [frontend]
+    needs: [frontend, sidecar]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -83,6 +98,12 @@ jobs:
         with:
           name: frontend-dist
           path: frontend/dist/
+
+      - name: Download sidecar binary
+        uses: actions/download-artifact@v4
+        with:
+          name: sidecar-exe
+          path: sidecars/
 
       - name: Setup Go
         uses: actions/setup-go@v5
@@ -101,11 +122,12 @@ jobs:
           GOOS=windows GOARCH=amd64 CGO_ENABLED=0 \
             go build -o build/ai_tools.exe -ldflags="-s -w" .
 
-      - name: Upload Go binary (Windows)
+      - name: Upload release package
         uses: actions/upload-artifact@v4
         with:
           name: ai-tools-windows-amd64
           path: |
             build/ai_tools.exe
             frontend/dist/
+            sidecars/
           retention-days: 7
